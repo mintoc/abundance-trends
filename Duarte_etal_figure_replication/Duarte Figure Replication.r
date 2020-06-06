@@ -51,21 +51,16 @@ library(spatstat)
 options(warn=2)
 options(digits=15)
 
-## get the main directory which should be the folder in which the code "Duarte Figure Replication.r" is
-main_dir <- getwd()
-
 # Load in scenario list
-setwd("./datload")
-scenarios=t(t(read.csv("replicate.scenarios.csv",header=TRUE)))
+##setwd("./datload")
+scenarios=t(t(read.csv("datload/replicate.scenarios.csv",header=TRUE)))
 SR=dim(scenarios)[1]
-
-setwd(main_dir)
 
 # Loop through scenarios
 for (s in 1:SR) {
 
 # Clear data in case new data set is used for new scenario
-saveds=c("scenarios","SR","s","main_dir")
+saveds=c("scenarios","SR","s")
 rm(list=setdiff(ls(), saveds)) 
 
 # Scenario options
@@ -119,15 +114,11 @@ if (scen.type=="mdl") {dsource="mdl"}
 
 if (scen.version=="v4.41" && scen.stocks=="all") {
 	if (dsource=="asmt") {
-		setwd("./datload/v4.41/asmt/")
-		load("DBdata.RData")
+		load("datload/v4.41/asmt/DBdata.RData")
 	}
 	if (dsource=="mdl") {
-		setwd("./datload/v4.41/mdl/")
-		load("DBdata.RData")
+		load("datload/v4.41/mdl/DBdata.RData")
 	}
-        setwd(main_dir)
-        
 	c999.ptr=which(999==as.numeric(assessment[,"mostrecent"]))
 	fdat=assessment[c999.ptr,c("assessid","stockid","stocklong")]
 	vers=scen.version
@@ -153,12 +144,9 @@ if (scen.version=="v4.41" && scen.stocks=="all") {
 
 if (scen.version=="v4.41" && scen.stocks=="Duarte") {
 	if (dsource=="asmt") {
-		setwd("./datload/v4.41/asmt/")
-		load("DBdata.RData")
+		load("./datload/v4.41/asmt/DBdata.RData")
 	}
-        setwd(main_dir)
-	setwd("./datload/")
-	dstocks=t(t(read.csv("dstocks (v4.41).csv",header=TRUE)))
+	dstocks=t(t(read.csv("datload/dstocks (v4.41).csv",header=TRUE)))
 
 	DRT=dim(dstocks)[1]
 	vers=scen.version
@@ -974,11 +962,7 @@ if (scen.weights=="Bmsywt" && scen.agg=="wtmedian") {
 ##########################
 ### Output Summary File
 ##########################
-setwd(main_dir)
-setwd("./scenarios/")
-write.table(plot.summ,file=paste("Scenario ",scen.scen," Summary.csv",sep=""), row.names=FALSE, col.names=TRUE, sep=",")
-
-setwd(main_dir)
+write.table(plot.summ,file=paste("scenarios/Scenario ",scen.scen," Summary.csv",sep=""), row.names=FALSE, col.names=TRUE, sep=",")
 
 }
 
