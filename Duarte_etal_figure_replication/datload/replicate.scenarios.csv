@@ -1,0 +1,10 @@
+Scenario,RAMversion,RAMtype,Stocks,Years,Source,Prefs,Weighting,Aggregate,method
+Alt1,v4.41,asmt-0.5maxB,Duarte,paper,views,allTBandSSB,equal,geom,summary
+Alt2,v4.41,asmt-0.5maxB,Duarte,paper,views,allTBandSSB,Bmsywt,geom,summary
+Alt3,v4.41,asmt-0.5maxB,Duarte,paper,views,allTBandSSB,equal,median,summary
+Alt4,v4.41,asmt-0.5maxB,Duarte,paper,views,allTBandSSB,Bmsywt,wtmedian,summary
+Try1,v4.41,asmt-0.5maxB,Duarte,paper,views,allTBandSSB,yearBwt,geom,summary
+Try2,v4.41,asmt-0.5maxB,Duarte,paper,views,onlyTBmsy-mgt,yearBwt,geom,summary
+Try3,v4.41,asmt,all,paper,views,allTBandSSB,yearBwt,geom,summary
+Try4,v4.41,asmt-0.5maxB,all,paper,views,allTBandSSB,yearBwt,geom,summary
+Try5,v4.41,mdl,all,paper,views,allTBandSSB,yearBwt,geom,summary
