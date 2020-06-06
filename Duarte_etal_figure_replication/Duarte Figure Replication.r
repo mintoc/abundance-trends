@@ -23,18 +23,13 @@
 #########	These R data files provide data input for the two RAMLDB versions used in these scenarios.
 #########
 #########	Folder structure assumed in code:
-#########	C:\\figurerep\\
-#########	C:\\figurerep\\datload\\
-#########	C:\\figurerep\\datload\\v4.41\\
-#########	C:\\figurerep\\datload\\v4.41\\asmt\\
-#########	C:\\figurerep\\datload\\v4.41\\mdl\\
-#########	C:\\figurerep\\scenarios\\
+#########       same wd as "Duarte Figure Replication.r"
 #########
 #########	File structure of inputs assumed in code:
-#########	C:\\figurerep\\datload\\dstocks (v4.41).csv
-#########	C:\\figurerep\\datload\\replicate.scenarios.csv
-#########	C:\\figurerep\\datload\\v4.41\\asmt\\DBdata.RData
-#########	C:\\figurerep\\datload\\v4.41\\mdl\\DBdata.RData
+#########	datload\\dstocks (v4.41).csv
+#########	datload\\replicate.scenarios.csv
+#########	datload\\v4.41\\asmt\\DBdata.RData
+#########	datload\\v4.41\\mdl\\DBdata.RData
 #########
 #########	Instructions:
 #########	Select all code and run. The code will iterate through the scenarios and output
